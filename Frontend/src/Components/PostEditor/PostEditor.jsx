@@ -45,8 +45,6 @@ const PostEditor = () => {
       navigate(`/home`)
     }
 
-    console.log(response);
-
     if (response.data.success === "true") {
       setTitle("");
       setAuthor("TPO");

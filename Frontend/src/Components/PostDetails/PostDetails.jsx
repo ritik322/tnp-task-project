@@ -20,13 +20,13 @@ const PostDetails = () => {
     <div id="post-details-container">
       <div id="options">
         <button className="option-button">
-          <i className="fa-solid fa-pen-to-square"></i>
+          <i style={{fontSize: "20px"}} className="fa-solid fa-pen-to-square"></i>
           <Link state={data} to={`/${id}`}>
             Edit
           </Link>
         </button>
         <button className="option-button" onClick={handleDelete}>
-          <i className="fa-solid fa-trash"></i>Delete
+          <i style={{fontSize: "20px"}} className="fa-solid fa-trash"></i>Delete
         </button>
       </div>
       <div id="post-title">

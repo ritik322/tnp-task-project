@@ -1,13 +1,38 @@
 import React, { useState } from "react";
 import "./Login.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
     const [username,setUserName] = useState('')
     const [password,setPassword] = useState('')
+    const navigate = useNavigate()
+
+    const handleSubmit = async(e) => {
+      e.preventDefault();
+
+      if(!username.length || !password.length){
+        return;
+      }
+
+      const csrfToken = await axios
+      .get("api/csrf-token")
+      .then((res) => res.data.csrf_token);
+
+      const response = await axios.post('api/login',{
+        'username': username,
+        'password': password,
+        '_token': csrfToken
+      })
+      setUserName('')
+      setPassword('')
+      navigate('/home')
+    }
+
   return (
     <div id="login-container">
     <i className="fa-solid fa-user"></i>
-      <form action="" id='form-container'>
+      <form action="" id='form-container' onSubmit={handleSubmit}>
         <div className="input-div">
           <label>Username</label>
           <input
