@@ -1,0 +1,50 @@
+#post{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 38em;
+    max-height: 30em !important;
+    overflow: hidden;
+    border-radius: 1em;
+    padding: 2em;
+    background-color: (255, 255, 255);
+    gap: 1em;
+    background-color: white;
+    justify-self: center;
+}
+#post:hover{
+    cursor: pointer;
+    background-color: rgba(128, 128, 128, 0.112);
+}
+
+#info{
+    max-height: 10em !important;
+    overflow: hidden;
+    padding-block: 0.5em;
+}
+
+#post-link{
+    text-align: center;
+    background-color: #1687d9;
+    padding: 0.8em;
+    border-radius: 1em;
+    color: white;
+}
+
+#post-link:hover{
+    transform: scale(1.02);
+    transition: transform 0.1s;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+h1{
+    margin-bottom: 0.1em;
+}
+
+span{
+    font-size: 0.8em;
+}

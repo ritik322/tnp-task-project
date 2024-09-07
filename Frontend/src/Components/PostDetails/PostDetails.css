@@ -1,0 +1,46 @@
+#post-details-container{
+    max-width: 40em;
+    background-color: white;
+    border-radius: 1em;
+    margin: 6em auto;
+    padding: .8em;
+}
+#post-title h1{
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+#options{
+    display: flex;
+    max-width: 8em;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+#post-details{
+    margin-top: 3em ;
+    text-align: justify;
+    padding-inline: .5em;
+}
+.option-button{
+    font-size: 1em;
+    font-weight: 500;
+    border: none;
+    display: flex;
+    gap: .3em;
+    padding: .5em;
+    border-radius: 1em;
+    cursor: pointer;
+    background-color: white;
+}
+
+.option-button:hover{
+    background-color: rgb(215, 211, 211);
+}
+a{
+    color: black;
+}
+
+span{
+    margin-top: .8em;
+    font-weight: 500;
+}

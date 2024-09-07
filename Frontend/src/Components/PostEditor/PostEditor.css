@@ -1,0 +1,36 @@
+#form{
+    max-width: 40em;
+    margin: 5em auto;
+    display: flex;
+    flex-direction: column;
+    gap: .8em;
+    padding: 3em;
+    background-color: white;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.label{
+    font-size: 1em;
+    font-weight: 500;
+}
+h1{
+    margin-block: .1em;
+}
+
+.input-div{
+    display: flex;
+    flex-direction: column;
+}
+
+form button{
+    padding: 1em;
+    font-weight: 600;
+    border-radius: 1em;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover{
+    background-color: rgba(128, 128, 128, 0.258);
+}
