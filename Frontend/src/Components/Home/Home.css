@@ -1,0 +1,12 @@
+#home{
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+}
+
+@media  (max-width: 780px) {
+    #home{
+        margin-top: 7em;
+    }
+    
+}

@@ -1,10 +1,10 @@
 import React from 'react'
 import PostContainer from '../PostContainer/PostContainer'
+import './Home.css'
 
 const Home = () => {
   return (
     <div id="home">
-      <h1>Welcome</h1>
       <PostContainer />
     </div>
   )

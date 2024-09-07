@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Header.css";
-import clgLogo from "../../Assets/gndec.png";
+import clgLogo from "../../Assets/logo.png";
 import { Link, useParams } from "react-router-dom";
 import {
   Drawer,
@@ -52,12 +52,12 @@ const Header = ({ isLogin, setIsLogin }) => {
       </Link>
       {isLogin === false ? (
         <Link to="/login" className="option-container">
-          <i class="fa-solid fa-arrow-right-to-bracket"></i>
+          <i className="fa-solid fa-arrow-right-to-bracket"></i>
           <span>Login</span>
         </Link>
       ) : (
         <Link to="/home" className="option-container" onClick={handleLogout}>
-          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <i className="fa-solid fa-arrow-right-from-bracket"></i>
           <span>Logout</span>
         </Link>
       )}

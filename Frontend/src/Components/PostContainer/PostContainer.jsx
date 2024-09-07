@@ -48,6 +48,7 @@ const PostContainer = () => {
 
   return (
     <div id="post-container">
+    <h1>Welcome 😊</h1>
       {loading ? (
         <Loader />
       ) : (

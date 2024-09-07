@@ -1,9 +1,10 @@
 #post-details-container{
-    max-width: 40em;
+    max-width: 30em;
     background-color: white;
     border-radius: 1em;
-    margin: 6em auto;
-    padding: .8em;
+    margin-block: 10em;
+    margin-inline: auto;
+    padding: 1em;
 }
 #post-title h1{
     text-transform: uppercase;

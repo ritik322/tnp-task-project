@@ -4,16 +4,28 @@ import MdEditor from "react-markdown-editor-lite";
 import "react-markdown-editor-lite/lib/index.css";
 import "./PostEditor.css";
 import axios from "axios";
-import { useLocation, useNavigate } from "react-router-dom";
+import {
+  useLocation,
+  useNavigate,
+  useOutletContext,
+} from "react-router-dom";
 
 const mdParser = new MarkdownIt();
 
 const PostEditor = () => {
-  const location = useLocation();
-  const navigate = useNavigate()
+  const [isLogin,setIsLogin] = useOutletContext();
+  const navigate = useNavigate();
+   
+  useEffect(()=>{
+    if(!isLogin){
+      navigate('/home')
+    }
+  },[])
 
-  const [content, setContent] = useState(location.state.content);
-  const [title, setTitle] = useState(location.state.title);
+  const location = useLocation();
+
+  const [content, setContent] = useState(location.state?.content || '');
+  const [title, setTitle] = useState(location.state?.title || "");
   const [author, setAuthor] = useState("TPO");
 
   const handleSubmit = async (e) => {
@@ -42,19 +54,20 @@ const PostEditor = () => {
         content: mdData,
         _token: csrfToken,
       });
-      navigate(`/home`)
+      
     }
 
     if (response.data.success === "true") {
       setTitle("");
       setAuthor("TPO");
       setContent("");
-    } 
+    }
+    navigate(`/home`);
   };
 
   return (
     <form method="" id="form" onSubmit={handleSubmit}>
-      <h1>{location.state.message}</h1>
+      <h1>{location.state?.message || ''}</h1>
       <div className="input-div">
         <label>Post Title</label>
         <input
@@ -80,7 +93,7 @@ const PostEditor = () => {
           onChange={({ text }) => setContent(text)}
         />
       </div>
-      <button type="submit">{location.state.message}</button>
+      <button type="submit">{location.state?.message || ''}</button>
     </form>
   );
 };
