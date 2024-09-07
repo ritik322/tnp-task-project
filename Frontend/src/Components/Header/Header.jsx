@@ -10,12 +10,14 @@ import {
   ListItemText,
 } from "@mui/material";
 
-
-const Header = () => {
+const Header = ({ isLogin, setIsLogin }) => {
   const [open, setOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 780);
 
-  const {post_id} = useParams()
+  const handleLogout = () => {
+    localStorage.setItem("isLogin", false);
+    setIsLogin(false);
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -38,8 +40,9 @@ const Header = () => {
         <i className="fa-solid fa-house icon"></i>
         <span>Home</span>
       </Link>
+
       <Link
-        style={{ color: "black" }}
+        style={{ color: "black", display: isLogin ? "flex" : "none" }}
         state={data}
         to="/create-post"
         className="option-container"
@@ -47,10 +50,17 @@ const Header = () => {
         <i className="fa-solid fa-plus"></i>
         <span>Create Post</span>
       </Link>
-      <Link to="/login" className="option-container">
-        <i className="fa-solid fa-right-to-bracket"></i>
-        <span>Login</span>
-      </Link>
+      {isLogin === false ? (
+        <Link to="/login" className="option-container">
+          <i class="fa-solid fa-arrow-right-to-bracket"></i>
+          <span>Login</span>
+        </Link>
+      ) : (
+        <Link to="/home" className="option-container" onClick={handleLogout}>
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <span>Logout</span>
+        </Link>
+      )}
     </>
   );
 

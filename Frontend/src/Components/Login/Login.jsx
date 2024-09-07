@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "./Login.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 
 const Login = () => {
     const [username,setUserName] = useState('')
     const [password,setPassword] = useState('')
     const navigate = useNavigate()
+    const context = useOutletContext()
+    const [isLogin,setIsLogin] = context;
 
     const handleSubmit = async(e) => {
       e.preventDefault();
@@ -26,6 +28,8 @@ const Login = () => {
       })
       setUserName('')
       setPassword('')
+      localStorage.setItem('isLogin',true)
+      setIsLogin(true);
       navigate('/home')
     }
 

@@ -1,16 +1,16 @@
 import { Outlet } from "react-router-dom"
 import Header from "./Components/Header/Header"
-import PostContainer from "./Components/PostContainer/PostContainer"
+import { useState } from "react"
 
 
 
 function App() {
-
+ const [isLogin,setIsLogin] = useState(JSON.parse(localStorage.getItem('isLogin')))
 
   return (
     <>
-    <Header />
-    <Outlet />
+    <Header isLogin = {isLogin} setIsLogin = {setIsLogin} />
+    <Outlet context={[isLogin,setIsLogin]} />
     </>
   )
 }

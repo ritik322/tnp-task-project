@@ -50,7 +50,14 @@ img {
   width: 100%;
   height: 100%;
 }
-
+span{
+  color: black;
+}
+button.option-container:hover{
+  background-color: rgba(183, 174, 174, 0.32);
+  border-radius: 1em;
+  cursor: pointer;
+}
 @media screen and (min-width: 780px) {
   img {
     align-self: center;
