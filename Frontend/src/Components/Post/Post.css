@@ -1,8 +1,7 @@
 #post{
     display: flex;
     flex-direction: column;
-    width: 100%;
-    max-width: 38em;
+    width: 38em;
     max-height: 30em !important;
     overflow: hidden;
     border-radius: 1em;

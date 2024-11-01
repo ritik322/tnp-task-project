@@ -4,7 +4,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 
-Route::get('api/posts', [PostController::class, 'index']);
+Route::get('api/posts/', [PostController::class, 'index']);
 Route::post('api/posts', [PostController::class, 'store']);
 Route::delete('api/posts/{id}', [PostController::class, 'destroy']);
 Route::put('api/posts/{id}',[PostController::class,'update']);

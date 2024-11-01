@@ -8,9 +8,18 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return Post::orderBy('updated_at', 'desc')->get();
+        $page = $request->input('page',1);
+        $perpage = 2;
+
+        $posts = Post::orderBy('updated_at','desc')->paginate($perpage);
+           return response()->json([
+            'current_page' => $posts->currentPage(),
+            'data' => $posts->items(),
+            'total' => $posts->total(),
+            'last_page' => $posts->lastPage(),
+        ]);
     }
 
     public function store(Request $request)
